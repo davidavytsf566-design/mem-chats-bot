@@ -1,12 +1,14 @@
 import asyncio
 import sqlite3
 import random
+import os
+
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import Command
 
-TOKEN = "ТОКЕН_СЮДА"
-ADMIN_ID = 123456789   # ← ТВОЙ ID !!!
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
